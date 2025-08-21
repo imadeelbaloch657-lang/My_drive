@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adeel Baloch Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #000; color: #fff; scroll-behavior: smooth; }
+    header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #111, #222); }
+    header img { width: 150px; height: 150px; border-radius: 50%; border: 3px solid #fff; }
+    header h1 { font-size: 2.8em; margin: 20px 0 10px; animation: fadeIn 2s; }
+    header p { font-size: 1.3em; color: #ccc; min-height: 30px; }
+    .btn { display: inline-block; margin: 15px 10px; padding: 12px 25px; background: #ff9800; color: #000; font-weight: bold; border-radius: 8px; text-decoration: none; transition: 0.3s; }
+    .btn:hover { background: #e68900; transform: scale(1.05); }
+    section { padding: 60px 20px; max-width: 900px; margin: auto; animation: fadeUp 1.2s; }
+    h2 { text-align: center; margin-bottom: 20px; color: #ff9800; }
+    .social-links a { margin: 0 15px; color: #ff9800; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    .social-links a:hover { color: #fff; }
+    .skill { margin: 15px 0; }
+    .bar { background: #333; border-radius: 20px; overflow: hidden; }
+    .bar-fill { height: 20px; background: #ff9800; text-align: right; padding-right: 10px; line-height: 20px; color: #000; font-weight: bold; transition: width 1s; }
+    form input, form textarea { width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 5px; }
+    form button { padding: 12px 25px; background: #ff9800; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    form button:hover { background: #e68900; }
+    footer { text-align: center; padding: 20px; background: #111; color: #888; }
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.ibb.co/Z6vYQ5JF/IMG-20250817-WA0040.jpg" alt="Adeel Baloch">
+    <h1>Adeel Baloch</h1>
+    <p id="typing"></p>
+    <a href="Adeel_Baloch_Resume.pdf" download class="btn">Download CV</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>My name is <b>Adeel Baloch</b>. I belong to Dera Ghazi Khan and currently live in Bahawalpur. I completed my basic education in Ali Pur and now, Alhamdulillah, I am studying Computer Science at COMSATS University Islamabad. I proudly belong to the Saraiki Wasaib culture.</p>
+  </section>
+
+  <section id="social">
+    <h2>Connect With Me</h2>
+    <div class="social-links" style="text-align: center;">
+      <a href="https://www.instagram.com/meer_adil239" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@adilmajeed_313" target="_blank">TikTok</a>
+      <a href="https://www.facebook.com/immeeradil" target="_blank">Facebook</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skill">
+      <p>HTML & CSS</p>
+      <div class="bar"><div class="bar-fill" style="width: 80%;">80%</div></div>
+    </div>
+    <div class="skill">
+      <p>Java</p>
+      <div class="bar"><div class="bar-fill" style="width: 70%;">70%</div></div>
+    </div>
+    <div class="skill">
+      <p>Python</p>
+      <div class="bar"><div class="bar-fill" style="width: 65%;">65%</div></div>
+    </div>
+    <div class="skill">
+      <p>Database (SQL)</p>
+      <div class="bar"><div class="bar-fill" style="width: 75%;">75%</div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>🚀 Coming Soon! I am working on some exciting Computer Science projects which will be added here.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Adeel Baloch | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Typing effect
+    const texts = ["Computer Science Student", "Tech Enthusiast", "From Saraiki Wasaib"];
+    let i = 0, j = 0, currentText = "", letter = "";
+    function typeEffect() {
+      if (i < texts.length) {
+        if (j === texts[i].length) {
+          setTimeout(() => { j = 0; i++; typeEffect(); }, 1500);
+        } else {
+          currentText = texts[i];
+          letter = currentText.slice(0, ++j);
+          document.getElementById("typing").textContent = letter;
+          setTimeout(typeEffect, 120);
+        }
+      } else {
+        i = 0; typeEffect();
+      }
+    }
+    typeEffect();
+  </script>
+
+</body>
+</html>
